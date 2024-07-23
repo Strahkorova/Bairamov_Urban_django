@@ -1,0 +1,23 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block page_title %} Numpy {% endblock %}
+
+{% block page_header %} Библиотека Numpy {% endblock %}
+
+{% block page_content %}
+
+    <div>
+        <p>Numpy - библиотека с открытым исходным кодом для языка программирования Python</p>
+        <p>Возможности:</p>
+        <ul>
+            
+            {% for feature in features %}
+                <li> {{ feature|title }} </li>
+            {% endfor %}
+        </ul>
+        <p>Текущая версия - 2.0.0 (16 июня 2024)</p>
+    </div>
+
+    {% include 'fourth_task/move_back.html' %}
+    
+{% endblock %}
