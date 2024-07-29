@@ -5,6 +5,7 @@ from django.db import models
 class Buyer(models.Model):
     name = models.CharField(max_length=255)
     balance = models.DecimalField(max_digits=10, decimal_places=2)
+    password = models.CharField(max_length=255, default='')
     age = models.PositiveIntegerField()
 
     def __str__(self):

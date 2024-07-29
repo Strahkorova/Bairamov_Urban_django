@@ -1,0 +1,30 @@
+{% extends 'second_task/index.html' %}
+
+{% block page_title %} Games {% endblock %}
+
+{% block page_header %} Games {% endblock %}
+
+{% block page_content %}
+
+    <p>Games page</p>
+
+    
+    {% for game in games %}
+        
+        <ul>
+            <li>
+                {{ game.title }} | {{ game.description }}. Стоимость: {{ game.cost }} 
+
+                {% if not buyer %}
+                    <span style="margin-left: 2%; color: red">войдите, чтобы купить</span>
+                {% else %}
+                    <button style="margin-left: 2%; cursor:pointer">Купить</button>
+                {% endif %}
+
+            </li>
+        </ul>
+
+    {% endfor %}
+        
+
+{% endblock %}

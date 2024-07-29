@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %} Главная страница {% endblock %}</title>
+</head>
+<body>
+
+    <div>
+        <h1>{% block page_header %} Главная страница {% endblock %}</h1>
+        {% if buyer %}
+            <p style="color: green;">Приветствуем {{ buyer.name }}</p>
+            <p style="">Ваш баланс {{ buyer.balance }}</p>
+            <p>
+                <a href="/task1/logout">Выход</a>
+            </p>
+        {% endif %}
+    </div>
+
+    {% include 'second_task/menu.html' %}
+
+    {% comment %} <p>Меню</p>
+    <ul>
+        
+        {% for item in menu_items %}
+        <li>
+            <a href="{{ item.link }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+
+    </ul> {% endcomment %}
+
+    {% if show_move_back %}
+        {% include 'second_task/move_back.html' %}
+    {% endif %}
+
+    {% block page_content %} {% endblock %}
+
+</body>
+</html>

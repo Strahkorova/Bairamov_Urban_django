@@ -1,0 +1,20 @@
+    <p>Меню</p>
+    <ul>
+        
+        {% for item in menu_items %}
+        <li>
+            <a href="{{ item.link }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% if not buyer %}
+        <ul>
+            <li>
+                <a href="/task1/register">Регистрация</a>
+            </li>
+            <li>
+                <a href="/task1/sign_in">Вход</a>
+            </li>
+        </ul>
+    {% endif %}
