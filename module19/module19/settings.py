@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'task1.apps.Task1Config',
     'blog.apps.BlogConfig',
+    'postgres.apps.PostgresConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +76,18 @@ WSGI_APPLICATION = 'module19.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+# После загрузки в гит, данные для подключения будут неактуальны
+# т.к. экземпляр облачной БД будет удален
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'default_db',
+        'USER': 'gen_user',
+        'PASSWORD': '#!9}Tx@h4dYgld',
+        'HOST': '147.45.239.224',
+        'PORT': '5432',
     }
 }
 
